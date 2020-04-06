@@ -15,24 +15,29 @@ type PropsType = {
 
 const AddModal = ({visible, onClose, onSubmit}: PropsType) => {
   const [name, setName] = useState('');
-  const [price, setPrice] = useState(0);
+  const [price, setPrice] = useState('');
   const [describe, setDescribe] = useState('');
 
   const onCancel = () => {
     setName('');
-    setPrice(0);
+    setPrice('');
     setDescribe('');
     onClose();
   };
 
   const handleSubmit = () => {
-    if (!name || !describe) {
+    if (!name || !describe || !price) {
       alert('Please input required fields.');
       return;
     }
-    onSubmit({name, price, describe});
+    const iPrice = parseInt(price);
+    if (iPrice <= 0) {
+      alert('Price must be greater than 0');
+      return;
+    }
+    onSubmit({name, price: iPrice, describe});
     setName('');
-    setPrice(0);
+    setPrice('');
     setDescribe('');
     onClose();
   };
@@ -57,7 +62,7 @@ const AddModal = ({visible, onClose, onSubmit}: PropsType) => {
             placeholder="Input Price"
             value={price}
             label="Price"
-            onChangeText={(text) => setPrice(parseInt(text))}
+            onChangeText={(text) => setPrice(text)}
             keyboardType="number-pad"
           />
         </View>
