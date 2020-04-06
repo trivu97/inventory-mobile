@@ -97,12 +97,13 @@ const styles = StyleSheet.create({
     paddingHorizontal: scaleHor(16),
     paddingVertical: scaleVer(16),
     borderRadius: 15,
-    height: scaleVer(349),
+    height: scaleVer(400),
   },
   button: {
     width: scaleHor(120),
   },
   formGroup: {
+    flex: 1,
     marginVertical: scaleVer(10),
   },
   pickerFormContainer: {

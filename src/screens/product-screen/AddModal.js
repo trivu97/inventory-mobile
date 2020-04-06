@@ -44,15 +44,13 @@ const AddModal = ({visible, onClose, onSubmit}: PropsType) => {
       animationType="slide"
       position="center">
       <View style={styles.container}>
-        <View>
-          <View style={styles.formGroup}>
-            <Input
-              placeholder="Input Name"
-              label="Name"
-              value={name}
-              onChangeText={(text) => setName(text)}
-            />
-          </View>
+        <View style={styles.formGroup}>
+          <Input
+            placeholder="Input Name"
+            label="Name"
+            value={name}
+            onChangeText={(text) => setName(text)}
+          />
         </View>
         <View style={styles.formGroup}>
           <Input
@@ -104,12 +102,13 @@ const styles = StyleSheet.create({
     paddingHorizontal: scaleHor(16),
     paddingVertical: scaleVer(16),
     borderRadius: 15,
-    height: scaleVer(350),
+    height: scaleVer(400),
   },
   button: {
     width: scaleHor(120),
   },
   formGroup: {
+    flex: 1,
     marginVertical: scaleVer(10),
   },
   pickerFormContainer: {

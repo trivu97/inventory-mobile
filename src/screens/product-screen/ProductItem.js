@@ -75,7 +75,7 @@ const styles = StyleSheet.create({
     marginVertical: scaleVer(5),
     backgroundColor: colors.white,
     width: '100%',
-    height: scaleVer(90),
+    height: scaleVer(110),
     borderRadius: 15,
     alignItems: 'center',
     ...shadowStyle.ELEVATION_3,

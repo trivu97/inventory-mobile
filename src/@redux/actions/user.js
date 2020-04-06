@@ -47,8 +47,8 @@ export const login = (dispatch) => async (
       method: METHODS.post,
       endpoint: `${ENDPOINTS.user}/login`,
       data: {
-        username,
-        password,
+        username: 'employee1',
+        password: '123456',
       },
     });
     if (result.status === STATUS.OK) {
